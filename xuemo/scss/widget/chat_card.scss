@@ -1,0 +1,66 @@
+@import "./varible.scss";
+
+.chat-card{
+  position: relative;
+  margin-top: 20px;
+  &.has-time{
+    margin-top: 40px;
+  }
+  .avatar {
+    top:0px;
+    position: absolute;
+    img{
+      width: $chat-avatar-width;
+      height: $chat-avatar-width;
+      border-radius: 50%;
+    }
+  }
+  .content{
+    display: inline-block;
+    padding: 12px 15px;
+    font-size: 13px;
+    width: 75%;
+    border-radius: $chat-border-radius;
+    &::after{
+      content:'';
+      width: 0px;
+      height: 0px;
+      display: inline-block;
+      border-width: 10px 10px;
+      border-style: solid;
+      top: 0px;
+      position: absolute;
+    }
+  }
+  &.left{
+    .content{
+      background: $chat-bg-1;
+      color:$chat-color-1;
+      float: left;
+      margin-left: $chat-content-margin;
+      position: relative;
+      &::after{
+        border-color:  $chat-bg-1 transparent transparent transparent;
+        left: -10px;
+      }
+    }
+    .avatar{
+      left: $chat-avatar-margin;
+    }
+  }
+  &.right{
+    .content{
+      color: $chat-color-2;
+      background:$chat-bg-2;
+      float: right;
+      margin-right: $chat-content-margin;
+      &::after{
+        border-color:  $chat-bg-2 transparent transparent transparent;
+        right: -10px;
+      }
+    }
+    .avatar{
+      right: $chat-avatar-margin;
+    }
+  }
+}

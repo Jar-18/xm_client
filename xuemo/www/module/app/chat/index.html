@@ -1,0 +1,12 @@
+<ion-view class="chat-list-container" view-title="chat">
+    <ion-content  class="has-header">
+        <ion-list>
+            <div class="chat-card clearfix" ng-class="{'left':chat.origin!='user','right':chat.origin=='user'}" ng-repeat="chat in chatList">
+                <div class="content" ng-bind="chat.content"></div>
+                <div class="avatar">
+                    <img ng-src="{{chat.avatar}}">
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
