@@ -40,7 +40,7 @@ angular.module('starter', [
         '$scope',
         '$state',
         'chatService', function ($scope, $state, chatService) {
-            var currentUserId=18;
+            var currentUserId=12;
             var socket=chatService.init(currentUserId);
             socket.on('private_message', function(data) {
                 console.debug(data);

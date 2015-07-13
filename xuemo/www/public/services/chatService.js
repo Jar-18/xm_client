@@ -17,11 +17,18 @@ angular.module("service.chat", [])
             },
             handleMsg:function($scope){
                 $scope.$on('privateMessage',function(event,chatInfo){
+                    var previousMsgTime=new Date($scope.latestChat.dateTime);
+                    var currentMsgTime=new Date(chatInfo.msg.datetime);
+                    var newMsg={
+                        content:chatInfo.msg.message,
+                        userId:chatInfo.msg.from
+                    };
+                    if(previousMsgTime&&(currentMsgTime-previousMsgTime)/(1000*60)>1){
+                        newMsg.dateTime=currentMsgTime;
+                    }
                     $scope.$apply(function(){
-                        $scope.chatList.push({
-                            content:chatInfo.msg.message,
-                            userId:chatInfo.msg.from
-                        });
+                        $scope.chatList.push(newMsg);
+                        $scope.latestChat=newMsg;
                     });
                 })
             }

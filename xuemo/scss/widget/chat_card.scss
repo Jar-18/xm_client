@@ -3,8 +3,15 @@
 .chat-card{
   position: relative;
   margin-top: 20px;
-  &.has-time{
-    margin-top: 40px;
+  &.with-time{
+    margin-top: 55px;
+    .time{
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      top:-30px;
+    }
   }
   .avatar {
     top:0px;

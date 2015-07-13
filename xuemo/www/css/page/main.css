@@ -1,8 +1,14 @@
 .chat-card {
   position: relative;
   margin-top: 20px; }
-  .chat-card.has-time {
-    margin-top: 40px; }
+  .chat-card.with-time {
+    margin-top: 55px; }
+    .chat-card.with-time .time {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      top: -30px; }
   .chat-card .avatar {
     top: 0px;
     position: absolute; }
