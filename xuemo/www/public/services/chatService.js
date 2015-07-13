@@ -7,15 +7,22 @@ angular.module("service.chat", [])
                 this.socket.emit('auth', {
                     userId: userId
                 });
-                this.socket.on('private_message', function(data) {
-                    console.log(data);
-                });
+                return this.socket;
             },
             sendMsg:function(destiny,msg){
                 this.socket.emit('private_message', {
                     to: destiny,
                     message: msg
                 });
+            },
+            handleMsg:function($scope){
+                $scope.$on('privateMessage',function(event,chatInfo){
+                    $scope.$apply(function(){
+                        $scope.chatList.push({
+                            "content":chatInfo.msg.message
+                        });
+                    });
+                })
             }
         }
     }])

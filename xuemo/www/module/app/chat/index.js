@@ -14,11 +14,12 @@ angular.module('starter.controllers')
                 }
             ];
             $scope.chatContent='';
+            chatService.handleMsg($scope);
             $scope.addChat=function(){
                 if($scope.chatContent==''){
                     return;
                 }
-                chatService.sendMsg(12,$scope.chatContent);
+                chatService.sendMsg(18,$scope.chatContent);
                 $scope.chatList.push({
                     "content":$scope.chatContent,
                     "origin":"user"
