@@ -19,7 +19,8 @@ angular.module("service.chat", [])
                 $scope.$on('privateMessage',function(event,chatInfo){
                     $scope.$apply(function(){
                         $scope.chatList.push({
-                            "content":chatInfo.msg.message
+                            content:chatInfo.msg.message,
+                            userId:chatInfo.msg.from
                         });
                     });
                 })

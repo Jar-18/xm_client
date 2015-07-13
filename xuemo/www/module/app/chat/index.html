@@ -4,7 +4,7 @@
             <div class="chat-card clearfix" ng-class="{'left':chat.origin!='user','right':chat.origin=='user'}" ng-repeat="chat in chatList">
                 <div class="content" ng-bind="chat.content"></div>
                 <div class="avatar">
-                    <img ng-src="{{chat.avatar}}">
+                    <img ng-src="{{avatarMap[chat.userId]}}">
                 </div>
             </div>
         </ion-list>
