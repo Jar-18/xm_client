@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
 
-    .controller('chatCtrl', ['$scope',
-        function($scope) {
+    .controller('chatCtrl', ['$scope','chatService',
+        function($scope,chatService) {
             $scope.chatList=[{
                 "content":"我要去打车海淀区中关村东路盈都大厦C座.......",
                 "time":"22:13",
@@ -18,6 +18,7 @@ angular.module('starter.controllers')
                 if($scope.chatContent==''){
                     return;
                 }
+                chatService.sendMsg(12,$scope.chatContent);
                 $scope.chatList.push({
                     "content":$scope.chatContent,
                     "origin":"user"

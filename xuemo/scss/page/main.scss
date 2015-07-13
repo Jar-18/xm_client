@@ -1,3 +1,26 @@
 @import "scss/widget/varible";
 @import "scss/widget/chat_card";
 
+.chat-list-container{
+  background: #eeeeee;
+  .input-wrapper{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    .tip-btn{
+      margin-right: 10px;
+      padding-right: 15px;
+      border-right: 1px solid #cdcdcd;
+    }
+    .check-btn{
+      font-size: 15px;
+      margin-right: 6px;
+      color: #cdcdcd;
+      font-weight: bold;
+      padding: 8px;
+    }
+  }
+}

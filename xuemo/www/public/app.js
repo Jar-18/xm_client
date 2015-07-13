@@ -5,7 +5,10 @@ angular.module('starter.controllers', [    ])
 
 angular.module('starter', [
         'ionic',
-        'starter.controllers'
+        'starter.controllers',
+
+        'service.config',
+        'service.chat'
     ])
 
 
@@ -21,16 +24,22 @@ angular.module('starter', [
                     }
                 }
             })
-            .state('app.chat', {
+            .state('chat', {
                 url: '/chat',
                 views: {
-                    'chats': {
+                    'app': {
                         templateUrl: 'module/app/chat/index.html',
                         controller: 'chatCtrl'
                     }
                 }
             })
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/chat');
+        $urlRouterProvider.otherwise('/chat');
 
-    });
+    }).controller('mainCtrl', [
+        '$scope',
+        '$state',
+        'chatService', function ($scope, $state, chatService) {
+            chatService.init(18);
+        }
+    ]);
